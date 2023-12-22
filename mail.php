@@ -4,9 +4,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require '../PHPMailer-6.9.1/src/Exception.php';
-require '../PHPMailer-6.9.1/src/SMTP.php';
-require '../PHPMailer-6.9.1/src/PHPMailer.php';
+require './PHPMailer-6.9.1/src/Exception.php';
+require './PHPMailer-6.9.1/src/SMTP.php';
+require './PHPMailer-6.9.1/src/PHPMailer.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les données du formulaire
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Password   = 'qauz ejvy kilk kyis';                               //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
         $mail->Port = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-   
+
         // Destinataire et expéditeur
         $mail->setFrom($email, $objet);
         $mail->addAddress('felix.despois@sts-sio-caen.info'); // Remplacez par l'adresse e-mail du destinataire
