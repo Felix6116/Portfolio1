@@ -524,3 +524,28 @@ form{
     z-index: 3;
 }
 
+#experience ul {
+    z-index: 1;
+    position: relative;
+    color: #fff;
+    padding: 20px; /* Ajustez la valeur pour l'espacement du contenu par rapport au bord supérieur */
+    background: rgba(0, 0, 0, 0.7); /* Ajoutez un fond semi-transparent pour améliorer la lisibilité du texte */
+    border-radius: 10px; /* Ajustez la valeur pour des coins plus ou moins arrondis */
+}
+
+#experience ul {
+    list-style: none;
+    padding: 0;
+}
+
+#experience ul li {
+    margin-bottom: 10px;
+}
+
+#experience .content {
+    text-align: center;
+    z-index: 3;
+}
+#experience .content a {
+    visibility: visible;
+}
