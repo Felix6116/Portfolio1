@@ -1,0 +1,520 @@
+body {
+    line-height: 1.6;
+    color: #fff;
+    background: #000;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "-apple-system", "BlinkMacSystemFont", "Roboto", "Helvetica Neue", sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &.stop {
+        overflow: hidden;
+    }
+}
+
+section {
+    display: flex;
+    min-height: 100vh;
+    padding: 50px;
+    justify-content: center;
+    align-items: flex-start;
+    background: #222;
+    color: #fff;
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #000;
+        opacity: .5;
+        height: 100%;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 120px;
+        margin: 20px 0 0;
+        z-index: 2;
+        position: relative;
+        text-align: left;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    img {
+        width: 150px; /* Ajustez la largeur de l'image selon vos besoins */
+        height: 150px; /* Ajustez la hauteur de l'image selon vos besoins */
+        border-radius: 150%;
+        margin-bottom: 5px;
+        margin-top: 70px;
+    }
+
+    p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+}
+
+.section {
+    background-image: url('route-sombre.jpg');
+    backdrop-filter: blur(5px); /* Ajustez la valeur en pixels selon vos préférences */
+}
+
+header {
+    z-index: 99999;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    nav {
+        max-width: 1200px; /* Vous pouvez ajuster la largeur selon vos préférences */
+        margin: 0 auto; /* Centre la barre horizontalement */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 200px;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+        position: relative;
+    
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            line-height: 1;
+            font-size: 15px;
+            letter-spacing: 2px;
+            text-transform: lowercase;
+            transition: .3s all cubic-bezier(0.075, 0.82, 0.165, 1) .6s;
+        }
+        header.sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        header.sticky nav {
+            background-color: transparent; /* Ajustez la couleur de fond selon vos préférences */
+            border-radius: 0;
+            padding: 10px 20px;
+        }
+        
+        header.sticky a {
+            color: #333; /* Ajustez la couleur du texte en mode "sticky" */
+        }
+        
+        header.sticky button {
+            left: 20px;
+            top: 10px;
+        }
+
+        button {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: absolute;
+            z-index: 99;
+            left: 20px;
+            top: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            cursor: pointer;
+            transition: .3s all cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+            transform: scale(0);
+
+            span {
+                width: 40%;
+                background: #fff;
+                height: 2px;
+                display: block;
+                margin: 5px auto;
+                transform: scalex(0);
+                transition: .6s transform cubic-bezier(0.075, 0.82, 0.165, 1) 0s, .3s margin ease-in 0s;
+            }
+
+            &:hover {
+                border-color: rgba(255, 255, 255, 0.5);
+
+                span {
+                    margin: 10px auto;
+                }
+            }
+        }
+    }
+
+    &.sticky {
+        nav {
+            padding: 10px;
+            button {
+                left: 10px;
+                top: 10px;
+            }
+
+            a {
+                opacity: 0;
+                letter-spacing: 0px;
+                transform: scale(0.3);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    section {
+        padding: 30px;
+        h1 {
+            font-size: 48px;
+        }
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+
+        a {
+            margin: 10px 0;
+            padding: 10px 0;
+        }
+
+        button {
+            left: 10px;
+            top: 10px;
+        }
+    }
+}
+
+
+
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 20px; 
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+button {
+    appearance: none;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    margin: auto;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+    transform: scale(0);
+
+    span {
+        width: 40%;
+        background: #fff;
+        height: 2px;
+        display: block;
+        margin: 5px auto;
+        transform: scaleX(0);
+        transition: 0.6s transform cubic-bezier(0.075, 0.82, 0.165, 1) 0s, 0.3s margin ease-in 0s;
+    }
+
+    &:hover {
+        border-color: rgba(255, 255, 255, 0.5);
+
+        span {
+            margin: 10px auto;
+        }
+    }
+}
+
+.scroll-down-arrow {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg); /* Combinez les deux transformations */
+    width: 20px;
+    height: 20px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.scroll-down-arrow:hover {
+    opacity: 0.7;
+}
+
+
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-20px);
+    }
+
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+
+#skills {
+    position: relative;
+    text-align: center; /* Ajout pour centrer le contenu horizontalement */
+}
+
+.center-container {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+#sep1 {
+    background-color: rgba(128, 48, 48, 0.952);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px -8px #ffffff;
+    padding: 50px 30px;
+    display: inline-block; /* Ajout pour centrer le contenu horizontalement */
+    text-align: left; /* Ajustement pour le contenu à gauche */
+}
+#sep1 {
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    background-color: rgba(110, 50, 116, 0.116); /* Ajout d'une couleur de fond */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px -8px #c5d6d6;
+    transform: translate(-50%, -50%);
+    padding: 50px 30px;
+    position: relative;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    position: relative;
+    right: 800px;
+    bottom: -200px;
+    transform: translate(-50%, -50%);
+    padding: 50px 30px;
+    box-shadow: 0 10px 20px -8px #034949;
+    background-color: #f71717;
+    border-radius: 15px;
+}
+
+.container h2 {
+    margin-bottom: 30px;
+    color: black;
+}
+
+.container .skill {
+    margin-bottom: 35px;
+    position: relative;
+    overflow-x: hidden;
+    color: black;
+}
+
+.container .skill::before {
+    content: "";
+    width: 100%;
+    height: 10px;
+    display: block;
+    position: absolute;
+    background-color: #959595;
+    bottom: 0;
+    border-radius: 10px;
+}
+
+.container .skill .skill-bar:hover::before {
+    height: 100%;
+}
+
+.container .skill p {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ff0000;
+    margin: 0;
+}
+
+.container .skill .skill-bar {
+    width: 100%;
+    height: 10px;
+    display: block;
+    position: relative;
+    border-radius: 10px;
+    animation: animated 1s both;
+}
+.container .skill .skill-bar.skill1 {
+    background-image: linear-gradient(109.6deg, rgb(0, 255, 0) 11.2%, rgb(255, 255, 255) 91.1%);
+    width: 30%;
+}
+
+.container .skill .skill-bar.skill2 {
+    background-image: linear-gradient(109.6deg, rgba(253, 199, 141, 1) 11.3%, rgba(249, 143, 253, 1) 100.2%);
+    width: 30%;
+}
+
+.container .skill .skill-bar.skill3 {
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(253, 193, 104, 1) 0%, rgba(251, 128, 128, 1) 90%);
+    width: 0%;
+}
+
+.container .skill .skill-bar.skill4 {
+    background-image: linear-gradient(109.6deg, rgba(218, 185, 252, 1) 11.2%, rgb(25, 59, 255) 91.1%);
+    width: 0%;
+}
+
+.container .skill .skill-bar.skill5 {
+    background: linear-gradient(25deg, #2ae1ee, #24ccff 50%);
+    width: 0%;
+}
+
+.container .skill .skill-bar span {
+    position: absolute;
+    border-top: 5px solid #0004ff;
+    top: -40px;
+    padding: 3px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.container .skill .skill-bar.skill1 span.skill-count,
+.container .skill .skill-bar.skill2 span.skill-count,
+.container .skill .skill-bar.skill3 span.skill-count,
+.container .skill .skill-bar.skill4 span.skill-count,
+.container .skill .skill-bar.skill5 span.skill-count {
+    right: 0;
+}
+
+@keyframes animated {
+    from {
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+
+    to {
+        transform: matrix3d(0, 0, 0);
+    }
+}
+
+a {
+    pointer-events: auto; /* Assurez-vous que la propriété est définie sur "auto" */
+    z-index: 1; /* Assurez-vous que le z-index est suffisamment élevé */
+}
+
+#formation-details {
+    text-align: center;
+    color: #fff; /* Couleur du texte */
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    position: relative;
+}
+
+#formation-details .content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#formation-details h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#formation-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#formation-details li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+
+#education {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajuste la hauteur à ta convenance */
+    position: relative;
+}
+
+#education::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(livre.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+#education h1 {
+    color: #fff;
+    padding: 50px 0;
+}
+
+#education h2,
+#education ul {
+    z-index: 1;
+    position: relative;
+    color: #fff;
+    padding: 20px; /* Ajustez la valeur pour l'espacement du contenu par rapport au bord supérieur */
+    background: rgba(0, 0, 0, 0.7); /* Ajoutez un fond semi-transparent pour améliorer la lisibilité du texte */
+    border-radius: 10px; /* Ajustez la valeur pour des coins plus ou moins arrondis */
+}
+
+#education ul {
+    list-style: none;
+    padding: 0;
+}
+
+#education ul li {
+    margin-bottom: 10px;
+}
+
+#education .content {
+    text-align: center;
+    z-index: 3;
+}
+#education .content a {
+    visibility: visible;
+}
+
