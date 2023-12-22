@@ -562,3 +562,15 @@ form{
 #experience .content a {
     visibility: visible;
 }
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajuste la hauteur à ta convenance */
+    position: relative;
+}
+#contact .content {
+    text-align: center;
+}
