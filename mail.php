@@ -23,12 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($resp->isSuccess()) 
 }
-
- else {
-    // Le captcha n'est pas valide, renvoyez un message d'erreur
-    $errors = $resp->getErrorCodes();
-    echo 'Erreur reCAPTCHA: ' . implode(', ', $errors);
- }
     $mail = new PHPMailer(true);
 
     try {
