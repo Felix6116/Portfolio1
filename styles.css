@@ -46,8 +46,8 @@ section {
     }
 
     img {
-        width: 150px; /* Ajustez la largeur de l'image selon vos besoins */
-        height: 150px; /* Ajustez la hauteur de l'image selon vos besoins */
+        width: 150px; 
+        height: 150px; 
         border-radius: 150%;
         margin-bottom: 5px;
         margin-top: 70px;
@@ -61,7 +61,7 @@ section {
 
 .section {
     background-image: url('route-sombre.jpg');
-    backdrop-filter: blur(5px); /* Ajustez la valeur en pixels selon vos préférences */
+    backdrop-filter: blur(5px); 
 }
 
 header {
@@ -71,8 +71,8 @@ header {
     transform: translateX(-50%);
     width: 100%;
     nav {
-        max-width: 1200px; /* Vous pouvez ajuster la largeur selon vos préférences */
-        margin: 0 auto; /* Centre la barre horizontalement */
+        max-width: 1200px; 
+        margin: 0 auto; 
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -105,13 +105,13 @@ header {
         }
         
         header.sticky nav {
-            background-color: transparent; /* Ajustez la couleur de fond selon vos préférences */
+            background-color: transparent; 
             border-radius: 0;
             padding: 10px 20px;
         }
         
         header.sticky a {
-            color: #333; /* Ajustez la couleur du texte en mode "sticky" */
+            color: #333; 
         }
         
         header.sticky button {
@@ -249,7 +249,7 @@ button {
     position: absolute;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%) rotate(-45deg); /* Combinez les deux transformations */
+    transform: translateX(-50%) rotate(-45deg); 
     width: 20px;
     height: 20px;
     border-left: 2px solid #fff;
@@ -281,7 +281,7 @@ button {
 
 #skills {
     position: relative;
-    text-align: center; /* Ajout pour centrer le contenu horizontalement */
+    text-align: center; 
 }
 
 .center-container {
@@ -297,14 +297,14 @@ button {
     border-radius: 15px;
     box-shadow: 0 10px 20px -8px #ffffff;
     padding: 50px 30px;
-    display: inline-block; /* Ajout pour centrer le contenu horizontalement */
-    text-align: left; /* Ajustement pour le contenu à gauche */
+    display: inline-block; 
+    text-align: left; 
 }
 #sep1 {
     margin: 0;
     padding: 0;
     z-index: 2;
-    background-color: rgba(110, 50, 116, 0.116); /* Ajout d'une couleur de fond */
+    background-color: rgba(110, 50, 116, 0.116); 
     border-radius: 15px;
     box-shadow: 0 10px 20px -8px #c5d6d6;
     transform: translate(-50%, -50%);
@@ -423,13 +423,13 @@ body {
 }
 
 a {
-    pointer-events: auto; /* Assurez-vous que la propriété est définie sur "auto" */
-    z-index: 1; /* Assurez-vous que le z-index est suffisamment élevé */
+    pointer-events: auto; 
+    z-index: 1; 
 }
 
 #formation-details {
     text-align: center;
-    color: #fff; /* Couleur du texte */
+    color: #fff; 
     background-size: cover;
     background-position: center;
     padding: 50px;
@@ -467,7 +467,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Ajuste la hauteur à ta convenance */
+    height: 100vh; 
     position: relative;
 }
 
@@ -496,9 +496,9 @@ a {
     z-index: 1;
     position: relative;
     color: #fff;
-    padding: 20px; /* Ajustez la valeur pour l'espacement du contenu par rapport au bord supérieur */
-    background: rgba(0, 0, 0, 0.7); /* Ajoutez un fond semi-transparent pour améliorer la lisibilité du texte */
-    border-radius: 10px; /* Ajustez la valeur pour des coins plus ou moins arrondis */
+    padding: 20px; 
+    background: rgba(0, 0, 0, 0.7); 
+    border-radius: 10px; 
 }
 
 #education ul {
@@ -529,7 +529,7 @@ form{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Ajuste la hauteur à ta convenance */
+    height: 100vh; 
     position: relative;
 }
 
@@ -541,9 +541,9 @@ form{
     z-index: 1;
     position: relative;
     color: #fff;
-    padding: 20px; /* Ajustez la valeur pour l'espacement du contenu par rapport au bord supérieur */
-    background: rgba(0, 0, 0, 0.7); /* Ajoutez un fond semi-transparent pour améliorer la lisibilité du texte */
-    border-radius: 10px; /* Ajustez la valeur pour des coins plus ou moins arrondis */
+    padding: 20px; 
+    background: rgba(0, 0, 0, 0.7); 
+    border-radius: 10px; 
 }
 
 #experience ul {
@@ -568,7 +568,7 @@ form{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Ajuste la hauteur à ta convenance */
+    height: 100vh; 
     position: relative;
 }
 #contact .content {
