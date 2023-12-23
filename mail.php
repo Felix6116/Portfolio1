@@ -17,12 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST['message'];
     $objet = $_POST['objet'];
     $recaptchaResponse = $_POST['recaptchaResponse'];
-
-    $recaptcha = new \ReCaptcha\ReCaptcha($recaptcha_secret);
-    $resp = $recaptcha->verify($recaptchaResponse, $_SERVER['REMOTE_ADDR']);
-
-    if ($resp->isSuccess()) 
 }
+ 
     $mail = new PHPMailer(true);
 
     try {
