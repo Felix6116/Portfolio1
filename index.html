@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Félix DESPOIS - PortFolio</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -221,6 +222,7 @@
             <h1>Contact</h1>
             <div class="content">
             <h2>Formulaire de Contact</h2>
+            
                 <br>
             <form action="./mail.php" method="post">
                 <label for="nom">Nom :</label>
@@ -235,9 +237,16 @@
                 <label for="message">Message :</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
                 <br>
+                <div class="g-recaptcha" data-sitekey="6LezijopAAAAAEGQJ_vcKrIDi1RwkcBkJaxGUuiT"></div>
+                <br>
                 <input type="submit" value="Envoyer">
             </form>
         </div>
+        <script>
+            function onSubmit() {
+                return true;
+            }
+        </script>
         </section>
        
 

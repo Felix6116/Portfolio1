@@ -83,3 +83,36 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+function onSubmit() {
+    var response = grecaptcha.getResponse();
+
+    if (response.length === 0) {
+        alert('Veuillez cocher la case "Je ne suis pas un robot".');
+        return false; // Bloquez l'envoi du formulaire si le captcha n'est pas coché
+    }
+
+    // Collectez les données du formulaire
+    var formData = {
+        nom: document.getElementById('nom').value,
+        email: document.getElementById('email').value,
+        objet: document.getElementById('objet').value,
+        message: document.getElementById('message').value,
+        recaptchaResponse: response
+    };
+
+    // Envoyez les données au serveur (vous devrez implémenter cette partie)
+    // Exemple avec une requête AJAX
+    // Notez que ceci est un exemple basique et peut nécessiter des ajustements en fonction de vos besoins et de votre environnement.
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'votre_script_de_traitement.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Traitez la réponse du serveur si nécessaire
+            console.log(xhr.responseText);
+        }
+    };
+    xhr.send(JSON.stringify(formData));
+
+    return true; // Envoyez le formulaire si le captcha est coché
+}

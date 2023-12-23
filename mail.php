@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $message = $_POST['message'];
     $objet = $_POST['objet'];
+    $recaptchaResponse = $_POST['recaptchaResponse'];
 }
  
     $mail = new PHPMailer(true);
