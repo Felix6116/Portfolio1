@@ -8,6 +8,8 @@ require './PHPMailer-6.9.1/src/Exception.php';
 require './PHPMailer-6.9.1/src/SMTP.php';
 require './PHPMailer-6.9.1/src/PHPMailer.php';
 
+$recaptcha_secret = '6LfSjDopAAAAAGua0y0f5eaemA7a0D40iGDib5Ez';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
     $nom = $_POST['nom'];
@@ -15,8 +17,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST['message'];
     $objet = $_POST['objet'];
     $recaptchaResponse = $_POST['recaptchaResponse'];
+
+    $recaptcha = new \ReCaptcha\ReCaptcha($recaptcha_secret);
+    $resp = $recaptcha->verify($recaptchaResponse, $_SERVER['REMOTE_ADDR']);
+
+    if ($resp->isSuccess()) 
 }
- 
+
+ else {
+    // Le captcha n'est pas valide, renvoyez un message d'erreur
+    $errors = $resp->getErrorCodes();
+    echo 'Erreur reCAPTCHA: ' . implode(', ', $errors);
+ }
     $mail = new PHPMailer(true);
 
     try {
