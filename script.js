@@ -104,7 +104,7 @@ function onSubmit() {
     // Exemple avec une requête AJAX
     // Notez que ceci est un exemple basique et peut nécessiter des ajustements en fonction de vos besoins et de votre environnement.
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'votre_script_de_traitement.php', true);
+    xhr.open('POST', 'mail.php', true);
     xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
